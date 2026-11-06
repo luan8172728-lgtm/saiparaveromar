@@ -4,37 +4,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Reino Encantado de Milena 💗</title>
+<title>O Reino Encantado de Milena 🐚</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap');
 
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
 
-body {
+html{scroll-behavior:smooth}
+
+body{
   font-family:'Quicksand',sans-serif;
-  background:#160d36;
+  background:#160b35;
   color:white;
   overflow-x:hidden;
 }
 
-body::before {
+#ocean3d{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  pointer-events:none;
+}
+
+body:after{
   content:"";
   position:fixed;
   inset:0;
-  z-index:-2;
-  background:
-    radial-gradient(ellipse at 20% 20%,#743c94 0%,transparent 40%),
-    radial-gradient(ellipse at 80% 30%,#d84c9a 0%,transparent 35%),
-    radial-gradient(ellipse at 50% 90%,#087c9a 0%,transparent 45%),
-    linear-gradient(150deg,#180d39,#35135c,#073b63);
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    180deg,
+    rgba(18,5,42,.35),
+    rgba(15,10,50,.12) 50%,
+    rgba(9,27,68,.55)
+  );
 }
 
-.stars {
+.stars{
   position:fixed;
   inset:0;
+  z-index:2;
   pointer-events:none;
-  z-index:-1;
+  opacity:.7;
   background-image:
     radial-gradient(2px 2px at 20% 30%,white,transparent),
     radial-gradient(2px 2px at 70% 60%,#ffc7f0,transparent),
@@ -44,184 +58,186 @@ body::before {
   animation:twinkle 4s infinite alternate;
 }
 
-@keyframes twinkle {
-  from {opacity:.4}
-  to {opacity:1}
+@keyframes twinkle{
+  from{opacity:.3}
+  to{opacity:1}
 }
 
-section {
+section{
   min-height:100vh;
-  padding:75px 20px;
+  padding:80px 22px;
   display:flex;
   align-items:center;
   justify-content:center;
   flex-direction:column;
   text-align:center;
   position:relative;
+  z-index:3;
 }
 
-h1,h2,.script {
+h1,h2,.script{
   font-family:'Great Vibes',cursive;
   font-weight:400;
   color:#ffd0ed;
-  text-shadow:0 0 25px #ff73cf;
+  text-shadow:0 0 20px #ff73cf,0 0 50px #c44fff;
 }
 
-h1 {font-size:clamp(3.5rem,10vw,6.5rem)}
-h2 {font-size:clamp(2.8rem,8vw,4.5rem)}
+h1{font-size:clamp(4rem,12vw,8rem)}
+h2{font-size:clamp(3rem,9vw,5rem)}
 
-.subtitle {
+.subtitle{
   color:#f7d9ff;
-  letter-spacing:3px;
+  letter-spacing:4px;
   font-size:.8rem;
   margin:20px 0;
 }
 
-.shell {
+.description{
+  max-width:680px;
+  line-height:2;
+  color:#f7e8ff;
+  font-size:1.05rem;
+  margin:25px auto;
+  text-shadow:0 2px 10px #160b35;
+}
+
+.shell{
   font-size:110px;
-  filter:drop-shadow(0 0 25px #ff91d8);
+  filter:drop-shadow(0 0 30px #ff91d8);
   animation:float 3s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%,100% {transform:translateY(0) rotate(-5deg)}
-  50% {transform:translateY(-20px) rotate(5deg)}
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(-5deg)}
+  50%{transform:translateY(-20px) rotate(5deg)}
 }
 
-button {
+button{
   border:1px solid #ffc0e8;
   background:linear-gradient(135deg,#f36dbb,#a86be9,#52cde1);
   color:white;
-  padding:16px 32px;
+  padding:17px 32px;
   border-radius:50px;
   font-family:inherit;
   font-size:1rem;
   font-weight:700;
   cursor:pointer;
-  box-shadow:0 0 25px #ec78d8;
+  box-shadow:0 0 30px #ec78d8;
   transition:.3s;
   margin-top:25px;
 }
 
-button:hover {
+button:hover{
   transform:scale(1.08);
-  box-shadow:0 0 40px #ffb5e8;
+  box-shadow:0 0 50px #ffb5e8;
 }
 
-.description {
-  max-width:650px;
-  line-height:2;
-  color:#f7e8ff;
-  font-size:1.05rem;
-  margin:20px auto;
-}
-
-.moon {
+.moon{
   font-size:100px;
   filter:drop-shadow(0 0 35px #ffe6a1);
   animation:moonlight 4s infinite alternate;
 }
 
-@keyframes moonlight {
-  from {filter:drop-shadow(0 0 15px #ffe6a1)}
-  to {filter:drop-shadow(0 0 50px #fff0ad)}
+@keyframes moonlight{
+  to{filter:drop-shadow(0 0 55px #fff0ad)}
 }
 
-.card {
+.card{
   max-width:650px;
   width:100%;
   padding:35px 25px;
-  background:linear-gradient(145deg,#ffffff18,#e58adf18);
-  border:1px solid #ffffff40;
+  background:rgba(38,12,65,.75);
+  border:1px solid rgba(255,190,240,.5);
   border-radius:30px;
-  backdrop-filter:blur(12px);
-  box-shadow:0 0 35px #d75ebd30;
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 40px #d75ebd50;
   margin-top:25px;
 }
 
-.card p {
+.card p{
   line-height:2;
   color:#fff0fa;
-  margin:15px 0;
+  margin:18px 0;
 }
 
-.hidden-message {
+.hidden-message{
   display:none;
   animation:appear 1.5s ease;
 }
 
-@keyframes appear {
-  from {opacity:0;transform:translateY(30px)}
-  to {opacity:1;transform:translateY(0)}
+@keyframes appear{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-.heart {
-  color:#ff9edb;
-  font-size:35px;
-  animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  50% {transform:scale(1.3)}
-}
-
-.floating {
-  position:fixed;
-  bottom:-60px;
-  pointer-events:none;
-  animation:rise linear forwards;
-  z-index:5;
-  opacity:.8;
-}
-
-@keyframes rise {
-  to {transform:translateY(-115vh) rotate(360deg);opacity:0}
-}
-
-.gallery {
+.gallery{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
+  gap:18px;
   margin-top:30px;
 }
 
-.gallery div {
-  width:135px;
-  height:135px;
+.gallery div{
+  width:110px;
+  height:110px;
   border-radius:25px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:55px;
+  font-size:48px;
   background:linear-gradient(135deg,#fa91d3,#9d8cf5,#58d7e0);
-  box-shadow:0 0 20px #ffb6e6;
+  box-shadow:0 0 25px #ffb6e6;
   transition:.3s;
 }
 
-.gallery div:hover {transform:rotate(8deg) scale(1.1)}
+.gallery div:hover{transform:rotate(8deg) scale(1.1)}
 
-footer {
+.heart{
+  color:#ff9edb;
+  font-size:40px;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.3)}
+}
+
+.floating{
+  position:fixed;
+  bottom:-60px;
+  pointer-events:none;
+  animation:rise linear forwards;
+  z-index:10;
+}
+
+@keyframes rise{
+  to{transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+
+footer{
   padding:35px;
   color:#e9c5f5;
   font-size:.85rem;
+  text-align:center;
+  position:relative;
+  z-index:3;
 }
 
-html {scroll-behavior:smooth}
-
-@media(max-width:600px) {
-  .shell {font-size:85px}
-  section {padding:55px 20px}
-  .card {padding:25px 18px}
+@media(max-width:600px){
+  .shell{font-size:85px}
+  section{padding:60px 18px}
+  .card{padding:25px 18px}
+  .gallery div{width:90px;height:90px}
 }
 </style>
 </head>
 
 <body>
 
+<canvas id="ocean3d"></canvas>
 <div class="stars"></div>
 
-<!-- ABERTURA -->
 <section id="inicio">
   <div class="subtitle">✦ UM UNIVERSO CRIADO COM AMOR ✦</div>
   <div class="shell">🐚</div>
@@ -234,7 +250,6 @@ html {scroll-behavior:smooth}
   <p style="margin-top:25px;color:#e7c4f5">♡ Feito especialmente para você ♡</p>
 </section>
 
-<!-- O REINO -->
 <section id="reino">
   <div class="moon">🌙</div>
   <h2>Bem-vinda ao seu reino</h2>
@@ -243,7 +258,6 @@ html {scroll-behavior:smooth}
     as conchas guardam desejos e as sereias cantam para a lua.
     Um lugar onde tudo é mágico, colorido e cheio de encanto.
   </p>
-
   <div class="gallery">
     <div>🧜‍♀️</div>
     <div>🐚</div>
@@ -252,12 +266,9 @@ html {scroll-behavior:smooth}
     <div>🦪</div>
     <div>💎</div>
   </div>
-  <button onclick="document.getElementById('lua').scrollIntoView()">
-    Descobrir mais 💗
-  </button>
+  <button onclick="ir('lua')">Descobrir mais 💗</button>
 </section>
 
-<!-- A LUA -->
 <section id="lua">
   <div class="moon">🌕</div>
   <h2>Entre a lua e o mar...</h2>
@@ -269,18 +280,13 @@ html {scroll-behavior:smooth}
   <p class="script" style="font-size:2.5rem">
     Você é minha magia favorita.
   </p>
-  <button onclick="document.getElementById('carta').scrollIntoView()">
-    Tenho uma cartinha para você 💌
-  </button>
+  <button onclick="ir('carta')">Tenho uma cartinha para você 💌</button>
 </section>
 
-<!-- CARTA -->
 <section id="carta">
   <div class="shell">💌</div>
   <h2>Uma carta para você</h2>
-  <p class="description">
-    Existe algo guardado nesta conchinha...
-  </p>
+  <p class="description">Existe algo guardado nesta conchinha...</p>
 
   <button onclick="abrirCarta()">Abrir minha cartinha 🐚</button>
 
@@ -322,15 +328,11 @@ html {scroll-behavior:smooth}
       em todas as luas e em todas as vidas. ❤️
     </h2>
 
-    <p class="script" style="font-size:2rem">
-      Com todo meu amor...
-    </p>
-
+    <p class="script" style="font-size:2rem">Com todo meu amor...</p>
     <div class="heart">♡</div>
   </div>
 </section>
 
-<!-- FINAL -->
 <section id="final">
   <div class="shell">🧜‍♀️</div>
   <h1>Milena</h1>
@@ -347,17 +349,13 @@ html {scroll-behavior:smooth}
     Obrigado por existir. 💗
   </p>
 
-  <div style="font-size:45px;margin:25px">
-    🌙 🐚 🪼 💗 🧜‍♀️
-  </div>
+  <div style="font-size:45px;margin:25px">🌙 🐚 🪼 💗 🧜‍♀️</div>
 
   <button onclick="celebrar()">Uma última surpresa ✨</button>
 
   <div id="surpresa" style="display:none;margin-top:30px">
     <h2>Você é a minha pessoa favorita! 💞</h2>
-    <p class="description">
-      E este pequeno reino sempre será seu.
-    </p>
+    <p class="description">E este pequeno reino sempre será seu.</p>
     <div style="font-size:55px">💗💗💗</div>
   </div>
 </section>
@@ -368,24 +366,26 @@ html {scroll-behavior:smooth}
 </footer>
 
 <script>
-function entrar() {
-  document.getElementById('reino').scrollIntoView();
+function entrar(){ir('reino')}
+
+function ir(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-function abrirCarta() {
-  const carta = document.getElementById('mensagem');
-  carta.style.display = 'block';
+function abrirCarta(){
+  const carta=document.getElementById('mensagem');
+  carta.style.display='block';
   carta.scrollIntoView({behavior:'smooth',block:'center'});
-  criarParticulas();
+  for(let i=0;i<30;i++)criarParticula();
 }
 
-function celebrar() {
+function celebrar(){
   document.getElementById('surpresa').style.display='block';
   document.getElementById('surpresa').scrollIntoView({behavior:'smooth'});
-  for(let i=0;i<45;i++) criarParticula();
+  for(let i=0;i<60;i++)criarParticula();
 }
 
-function criarParticula() {
+function criarParticula(){
   const elementos=['💗','✨','🐚','💕','🫧','🌸','💎'];
   const el=document.createElement('div');
   el.className='floating';
@@ -397,13 +397,304 @@ function criarParticula() {
   setTimeout(()=>el.remove(),9500);
 }
 
-function criarParticulas() {
-  for(let i=0;i<25;i++) criarParticula();
+setInterval(()=>{
+  if(Math.random()>.35)criarParticula();
+},1500);
+</script>
+
+<!-- CENÁRIO 3D DO CASTELO -->
+<script type="module">
+import * as THREE from
+'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
+
+const canvas=document.querySelector('#ocean3d');
+
+const scene=new THREE.Scene();
+scene.fog=new THREE.FogExp2(0x24104b,.018);
+
+const camera=new THREE.PerspectiveCamera(
+  55,innerWidth/innerHeight,.1,200
+);
+camera.position.set(0,5,20);
+
+const renderer=new THREE.WebGLRenderer({
+  canvas,alpha:true,antialias:true
+});
+renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.5;
+
+scene.add(new THREE.AmbientLight(0xcbbaff,2));
+
+const moonLight=new THREE.PointLight(0xffb8ed,120,60);
+moonLight.position.set(0,10,2);
+scene.add(moonLight);
+
+const blueLight=new THREE.PointLight(0x45eaff,100,45);
+blueLight.position.set(-8,0,5);
+scene.add(blueLight);
+
+const pinkLight=new THREE.PointLight(0xff59c9,130,40);
+pinkLight.position.set(8,3,3);
+scene.add(pinkLight);
+
+const pink=new THREE.MeshStandardMaterial({color:0xff9edb,roughness:.3});
+const lightPink=new THREE.MeshStandardMaterial({color:0xffd1ef,roughness:.25});
+const purple=new THREE.MeshStandardMaterial({color:0xa987ef,roughness:.3});
+const gold=new THREE.MeshStandardMaterial({color:0xffd982,metalness:.7,roughness:.2});
+const glow=new THREE.MeshBasicMaterial({color:0xffe2f8});
+const turquoise=new THREE.MeshStandardMaterial({color:0x48dce3,roughness:.2});
+
+function mesh(g,m,x,y,z,sx=1,sy=1,sz=1){
+  const o=new THREE.Mesh(g,m);
+  o.position.set(x,y,z);
+  o.scale.set(sx,sy,sz);
+  scene.add(o);
+  return o;
 }
 
-setInterval(()=>{
-  if(Math.random()>.35) criarParticula();
-},1200);
+function cylinder(x,y,z,r1,r2,h,m){
+  return mesh(new THREE.CylinderGeometry(r1,r2,h,32),m,x,y,z);
+}
+
+function sphere(x,y,z,r,m,sx=1,sy=1,sz=1){
+  return mesh(new THREE.SphereGeometry(r,24,24),m,x,y,z,sx,sy,sz);
+}
+
+// PLATAFORMA DO CASTELO
+cylinder(0,-4,0,8,9,1.5,purple);
+
+// TORRES
+function tower(x,z,height,material){
+  const bottom=-3.2;
+  cylinder(x,bottom+height/2,z,.85,.95,height,material);
+  cylinder(x,bottom+height*.22,z,.94,.94,.22,gold);
+
+  mesh(
+    new THREE.ConeGeometry(1.15,2.3,32),
+    purple,x,bottom+height+.9,z
+  );
+
+  sphere(x,bottom+height+2.1,z,.12,gold);
+  sphere(x,bottom+height*.55,z-.82,.20,glow,.7,1.6,.5);
+  cylinder(x,bottom+height*.35,z,.98,.98,.1,lightPink);
+}
+
+tower(0,0,8,lightPink);
+tower(-3,0,5,pink);
+tower(3,0,5,pink);
+tower(-5,1,3.5,turquoise);
+tower(5,1,3.5,turquoise);
+tower(-2.5,-2,4,purple);
+tower(2.5,-2,4,purple);
+
+// PALÁCIO CENTRAL
+cylinder(0,-.3,0,2.1,2.4,5,pink);
+
+mesh(
+  new THREE.ConeGeometry(2.5,3,48),
+  lightPink,0,4.7,0
+);
+
+// PORTA E JANELAS
+mesh(new THREE.BoxGeometry(1.1,2,.15),purple,0,-2.1,2.32);
+sphere(0,-1.1,2.32,.5,gold,.9,1.1,.25);
+
+for(let i=-2;i<=2;i++){
+  sphere(i*.85,0,2.15,.18,glow,.7,1.6,.5);
+}
+
+// LUA
+sphere(0,10,-12,2.1,glow);
+
+const halo=new THREE.PointLight(0xffd6fa,150,50);
+halo.position.set(0,10,-9);
+scene.add(halo);
+
+for(let i=0;i<3;i++){
+  const ring=mesh(
+    new THREE.TorusGeometry(2.6+i*.35,.025,8,100),
+    gold,0,10,-12
+  );
+  ring.rotation.x=.9;
+}
+
+// FUNDO DO OCEANO
+const ocean=mesh(
+  new THREE.PlaneGeometry(200,200,40,40),
+  new THREE.MeshStandardMaterial({
+    color:0x34216f,
+    roughness:.3,
+    metalness:.4,
+    transparent:true,
+    opacity:.7
+  }),
+  0,-5,0
+);
+ocean.rotation.x=-Math.PI/2;
+
+// CORAIS
+function coral(x,z,color){
+  const material=new THREE.MeshStandardMaterial({
+    color,
+    emissive:color,
+    emissiveIntensity:.3
+  });
+
+  for(let i=0;i<5;i++){
+    const h=1+Math.random()*2;
+    const branch=cylinder(
+      x+(Math.random()-.5)*1.3,
+      -4+h/2,z,.16,.22,h,material
+    );
+    branch.rotation.z=(Math.random()-.5)*.6;
+  }
+}
+
+coral(-8,-1,0xff65c9);
+coral(8,-1,0x65dbea);
+coral(-10,-5,0xc18bff);
+coral(10,-5,0xffb5df);
+
+// PÉROLAS
+const pearls=[];
+const pearlMaterial=new THREE.MeshPhysicalMaterial({
+  color:0xffdafa,
+  metalness:.2,
+  roughness:.08,
+  clearcoat:1,
+  emissive:0x8b367d,
+  emissiveIntensity:.25
+});
+
+for(let i=0;i<75;i++){
+  const p=sphere(
+    (Math.random()-.5)*28,
+    Math.random()*16-3,
+    (Math.random()-.5)*20-4,
+    .06+Math.random()*.12,
+    pearlMaterial
+  );
+
+  pearls.push({
+    mesh:p,
+    y:p.position.y,
+    speed:.3+Math.random()*.8,
+    phase:Math.random()*10
+  });
+}
+
+// ÁGUAS-VIVAS
+const jellyfish=[];
+
+for(let i=0;i<10;i++){
+  const group=new THREE.Group();
+
+  const cap=new THREE.Mesh(
+    new THREE.SphereGeometry(.55,24,16,0,Math.PI*2,0,Math.PI/2),
+    new THREE.MeshStandardMaterial({
+      color:i%2?0xff8cdb:0x70e8ff,
+      emissive:i%2?0xff38c7:0x22aaff,
+      emissiveIntensity:1.3,
+      transparent:true,
+      opacity:.8
+    })
+  );
+  group.add(cap);
+
+  for(let j=0;j<6;j++){
+    const tentacle=new THREE.Mesh(
+      new THREE.CylinderGeometry(.015,.035,1.4,8),
+      lightPink
+    );
+    tentacle.position.set(Math.cos(j)*.25,-.75,Math.sin(j)*.25);
+    group.add(tentacle);
+  }
+
+  group.position.set(
+    (Math.random()-.5)*22,
+    Math.random()*9-1,
+    -3-Math.random()*8
+  );
+
+  scene.add(group);
+
+  jellyfish.push({
+    mesh:group,
+    y:group.position.y,
+    phase:Math.random()*10
+  });
+}
+
+// PARTÍCULAS
+const positions=[];
+
+for(let i=0;i<500;i++){
+  positions.push(
+    (Math.random()-.5)*35,
+    Math.random()*20-5,
+    (Math.random()-.5)*30
+  );
+}
+
+const geometry=new THREE.BufferGeometry();
+geometry.setAttribute(
+  'position',
+  new THREE.Float32BufferAttribute(positions,3)
+);
+
+const particles=new THREE.Points(
+  geometry,
+  new THREE.PointsMaterial({
+    color:0xffc6ef,
+    size:.075,
+    transparent:true,
+    opacity:.85,
+    blending:THREE.AdditiveBlending
+  })
+);
+scene.add(particles);
+
+// ANIMAÇÃO
+const clock=new THREE.Clock();
+
+function animate(){
+  requestAnimationFrame(animate);
+
+  const t=clock.getElapsedTime();
+
+  camera.position.x=Math.sin(t*.15)*1.5;
+  camera.position.y=5+Math.sin(t*.3)*.35;
+  camera.lookAt(0,1,0);
+
+  pearls.forEach(p=>{
+    p.mesh.position.y=p.y+Math.sin(t*p.speed+p.phase)*.4;
+    p.mesh.position.x+=Math.sin(t*.3+p.phase)*.0008;
+  });
+
+  jellyfish.forEach(j=>{
+    j.mesh.position.y=j.y+Math.sin(t*.7+j.phase)*.7;
+    j.mesh.position.x+=Math.sin(t*.2+j.phase)*.002;
+    j.mesh.rotation.z=Math.sin(t+j.phase)*.1;
+  });
+
+  particles.rotation.y=t*.015;
+  ocean.position.z=Math.sin(t*.3)*.1;
+  moonLight.intensity=110+Math.sin(t)*20;
+
+  renderer.render(scene,camera);
+}
+
+animate();
+
+// ADAPTAÇÃO À TELA
+window.addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+});
 </script>
 
 </body>
